@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Edit table</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.css" />
+</head>
+<body style="background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);">
+<br><br><br><br>
+      <div class="container text-center" style="background-color:white;width:650px;height:550px;">
+          <br><br>
+          <div>
+              <h1>Edit table</h1>
+              <br><br>
+          </div>
+
+          <form th:action="@{/tables/save}" method="post" style="max-width:600px;margin:0 auto;"  th:object="${masa}" >
+              <input type="hidden" th:field="*{id}"/>
+              <div class="m-3">
+                       <div class="form-group row">
+                           <label class="col-form-label col-4">Numar</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control" th:field="*{number}" required />
+                            </div>
+                       </div>
+
+                       <br>
+                      <div class="form-group row">
+                           <label class="col-form-label col-4">Produse</label>
+                            <div class="col-8">
+                                 <th:block th:each="product : ${listProducts}">
+                                      <input type="checkbox" th:field="*{products}"
+                                     th:value="${product.id}" th:text="${product.name}"
+                                     class="m-2" />
+                               </th:block>
+                            </div>
+                      </div>
+                        <br>
+                       <div>
+                           <button type="submit" class="btn btn-primary">Update</button>
+                           <br><br>
+                       </div>
+
+
+              </div>
+
+          </form>
+
+
+
+
+      </div>
+</body>
+</html>

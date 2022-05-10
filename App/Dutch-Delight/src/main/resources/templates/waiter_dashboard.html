@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Dutch Delight</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.css" />
+
+    <link href="http://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+
+</head>
+<body style="background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);">
+
+
+<div class="container text-left" style="background-color:black;color:white;font-size:25px;width:300px;">
+
+    <div class="m-3">
+       <ul>
+           <a th:href="@{/list_tables}" style="blackground-color:black;color:cornflowerblue;">Orders</a>
+           <a th:href="@{/logout}" style="blackground-color:black;color:white;">Log out</a>
+       </ul>
+
+    </div>
+
+
+</div>
+
+
+<div class="container text-center">
+
+           <div class="m-3">
+           </div>
+    <br><br><br>
+    <div>
+        <p style="background-color:black;color:white;font-family: 'Tangerine', serif;font-size: 50px;margin-left:-57px;margin-top:10px;">Welcome <span sec:authentication="principal.authorities">Roles </span> <b>[[${#request.userPrincipal.principal.fullName}]]</b> </p>
+    </div>
+    <br><br><br>
+           <div>
+                 <p style="background-color:black;color:white;font-family: 'Tangerine', serif;font-size: 100px;margin-left:-57px;margin-top:10px;">Dashboard waiter </p>
+           </div>
+         <div>
+
+         </div>
+
+      </div>
+</body>
+</html>
