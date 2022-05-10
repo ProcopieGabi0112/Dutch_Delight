@@ -1,2 +1,2 @@
-# Dutch_Deloght
+# Dutch_Delight
 Spring Boot Restaurant App
